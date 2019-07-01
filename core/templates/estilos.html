@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<a href="{% url 'cadastrar_estilo' %}"><button>Cadastrar Estilo</button></a>
+	<table border="1">
+		<tr>
+		<th>Nome:</th>
+		<th>Gerenciar:</th>
+	</tr>
+	{% for lista in lista %}
+	<tr>
+		<td>
+			{{lista.nome}}
+		</td>
+		<td>
+			<a href="{% url 'editar_estilo' lista.id %}"><button>Editar</button> </a> <a href="{% url 'excluir_estilo' lista.id %}"><button>Excluir</button></a>
+		</td>
+	</tr>
+	{% empty %}
+	<p>Nenhum estilo cadastrado</p>
+	{% endfor %}
+	</table>
+</body>
+</html>

@@ -15,8 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from core.views import inicial, perfil, registro
+from core.views import inicial, perfil, registro, estilos, cadastrar_estilo, editar_estilo, excluir_estilo, dancarinos, dancarino, editardancarino, excluirdancarino
 from django.contrib.auth import views as auth_views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('', inicial, name='inicial'),
@@ -24,7 +26,14 @@ urlpatterns = [
     path('registro/', registro, name='registro'),
     path('login/', auth_views.LoginView.as_view(), name='login'),
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
+    path('estilos/', estilos, name="estilos"),
+    path('cadastrar/estilo', cadastrar_estilo, name="cadastrar_estilo"),
+    path('editar/estilo/<int:id>', editar_estilo, name="editar_estilo"),
+    path('excluir/estilo/<int:id>', excluir_estilo, name="excluir_estilo"),
+    path('dancarinos/', dancarinos, name="dancarinos"),
+    path('cadastrar/dancarino', dancarino, name="dancarino"),
+    path('editar/dancarino/<int:id>/', editardancarino, name="editardancarino"),
+    path('excluir/dancarino/<int:id>/', excluirdancarino, name="excluirdancarino"),
     path('admin/', admin.site.urls),
-]
-   
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

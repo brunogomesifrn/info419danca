@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+	<title></title>
+	<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="{% static 'css/modern-business.css' %}" rel="stylesheet">
+</head>
+<body>
+	<a href="{% url 'dancarino' %}"><button type="button" class="btn btn-primary">Cadastrar Dançarino</button></a>
+	<table class="table text-center">
+		<tr>
+		<th>Nome:</th>
+		<th>Biografia</th>
+		<th>Curso</th>
+		<th>Idade</th>
+		<th>Foto</th>
+		<th>Estilo</th>
+		<th>Gerenciar:</th>
+	</tr>
+	{% for lista in dancarino %}
+	<tr>
+		<td>
+			{{lista.nome}}
+		</td>
+		<td>
+			{{lista.biografia}}
+		</td>
+		<td>
+			{{lista.curso}}
+		</td>
+		<td>
+			{{lista.idade}}
+		</td>
+		<td>
+			<img src="/media/{{lista.foto}}" height="200px" width="200px">
+		</td>
+		<td>
+			{{lista.estilo}}
+		</td>
+		<td>
+			<a href="{% url 'editardancarino' lista.id %}"><button type="button" class="btn btn-info">Editar</button> </a> <a href="{% url 'excluirdancarino' lista.id %}"><button type="button" class="btn btn-danger">Excluir</button></a>
+		</td>
+	</tr>
+	{% empty %}
+	<p>Nenhum dançarino cadastrado</p>
+	{% endfor %}
+	</table>
+	<!--
+		Colocar em index
+	<ul>
+		<li>{{dancarino.nome}}</li>
+	</ul>
+-->
+<script src="{% static 'js/jquery.min.js' %}" ></script>
+ <script src="{% static 'js/bootstrap.bundle.min.js' %}" ></script>
+</body>
+</html>
