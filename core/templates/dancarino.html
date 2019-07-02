@@ -1,13 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+{% load static %}
+{% load widget_tweaks %}
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>DivDance</title>
+  <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="{% static 'css/modern-business.css' %}" rel="stylesheet">
+
 </head>
 <body>
 	<form method="POST" enctype="multipart/form-data">
 		{% csrf_token %}
-		{{form}}
-		<button type="submit">SALVAR</button>
+
+    <p>{{form.nome.label}}: {{form.nome|add_class:"form-control"}} </p>
+    <p>{{form.biografia.label}}:  {{form.biografia|add_class:"form-control"}}
+    <p>{{form.curso.label}}:  {{form.curso|add_class:"form-control"}}
+    <p>{{form.idade.label}}:  {{form.idade|add_class:"form-control"}}
+    <p>{{form.foto.label}}:   {{form.foto|add_class:"form-control"}} </p>
+    <p>{{form.estilo.label}}:  {{form.estilo|add_class:"form-control"}}
+    <br/>
+
+		<button type="submit" class="btn btn-info">SALVAR</button>
 	</form>
+ <script src="{% static 'js/jquery.min.js' %}" ></script>
+ <script src="{% static 'js/bootstrap.bundle.min.js' %}" ></script>
 </body>
 </html>

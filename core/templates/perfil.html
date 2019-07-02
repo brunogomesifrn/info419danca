@@ -1,12 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
+  {% load static %}
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
 	<title></title>
+	<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="{% static 'css/modern-business.css' %}" rel="stylesheet">
+
+	
 </head>
 <body>
-	<p>PERFIL</p>
 	<p><a href="{% url 'logout' %}">Sair</a></p>
-	<a href="{% url 'estilos' %}"><button>Estilos</button></a>
-	<a href="{% url 'dancarinos' %}"><button>Dançarinos</button></a>
+	<a href="{% url 'estilos' %}"><button type="button" class="btn btn-primary"> Cadastrar Estilos</button></a>
+	<a href="{% url 'dancarinos' %}"><button type="button" class="btn btn-primary">Cadastrar Dançarinos</button></a>
+<script src="{% static 'js/jquery.min.js' %}" ></script>
+ <script src="{% static 'js/bootstrap.bundle.min.js' %}" ></script>
+
 </body>
 </html>

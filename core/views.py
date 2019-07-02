@@ -19,7 +19,7 @@ def registro(request):
 	form = UserCreationForm(request.POST or None)
 	if form.is_valid():
 		form.save()
-		return redirect('login.html')
+		return redirect('login')
 	contexto = {
 	'form': form
 	}

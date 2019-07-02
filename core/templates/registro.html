@@ -1,17 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
+    {% load static %}
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
 	<title></title>
+	<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="{% static 'css/modern-business.css' %}" rel="stylesheet">
+
 </head>
 <body>
-<h2>Registro de Usuário</h2>
+<h1>Registro de Usuário</h1>
 <form method="post">
 {% csrf_token %}
-<p>Usuário: {{ form.username }}</p>
-<p>Senha: {{ form.password1 }}</p>
-<p>Repetir Senha: {{ form.password2 }}</p>
+<p class="btn btn-info">Usuário: {{ form.username }}</p> <br/>
+<p class="btn btn-info">Senha: {{ form.password1 }}</p>  <br/>
+<p class="btn btn-info"">Repetir Senha: {{ form.password2 }}</p>
 
-<button type="submit">Salvar</button>
+<button type="submit" class="btn btn-danger">Salvar</button>
 </form>
+
+ <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>

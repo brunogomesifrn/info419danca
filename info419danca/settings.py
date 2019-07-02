@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'widget_tweaks',
     'core',
 ]
 
@@ -128,4 +129,4 @@ LOGIN_URL = '/login/'
 
 LOGIN_REDIRECT_URL = 'perfil'
 
-LOGOUT_REDIRECT_URL = 'index'
+LOGOUT_REDIRECT_URL = 'inicial'

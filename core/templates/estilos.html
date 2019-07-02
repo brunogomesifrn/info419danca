@@ -1,11 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
+  {% load static %}
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
 	<title></title>
+	<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="{% static 'css/modern-business.css' %}" rel="stylesheet">
+
 </head>
 <body>
-	<a href="{% url 'cadastrar_estilo' %}"><button>Cadastrar Estilo</button></a>
-	<table border="1">
+	<a href="{% url 'cadastrar_estilo' %}"><button type="button" class="btn btn-primary">Cadastrar Um Novo Estilo</button></a>
+	<table class="table text-center">
 		<tr>
 		<th>Nome:</th>
 		<th>Gerenciar:</th>
@@ -16,12 +26,14 @@
 			{{lista.nome}}
 		</td>
 		<td>
-			<a href="{% url 'editar_estilo' lista.id %}"><button>Editar</button> </a> <a href="{% url 'excluir_estilo' lista.id %}"><button>Excluir</button></a>
+			<a href="{% url 'editar_estilo' lista.id %}"><button type="button" class="btn btn-info">Editar</button> </a> <a href="{% url 'excluir_estilo' lista.id %}"><button type="button" class="btn btn-danger">Excluir</button></a>
 		</td>
 	</tr>
 	{% empty %}
 	<p>Nenhum estilo cadastrado</p>
 	{% endfor %}
 	</table>
+<script src="{% static 'js/jquery.min.js' %}" ></script>
+ <script src="{% static 'js/bootstrap.bundle.min.js' %}" ></script>
 </body>
 </html>

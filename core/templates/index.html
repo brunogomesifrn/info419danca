@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   {% load static %}
 
@@ -9,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title> Site </title>
+  <title> DivDance </title>
 
   <!-- Bootstrap core CSS -->
   <link href="{%  static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
@@ -35,7 +34,7 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'registro' %}">Cadastrar-se</a>
+            <a class="nav-link" href="{% url 'registro' %}">Administração</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'login' %}">Login</a>
@@ -48,8 +47,8 @@
   <header class="masthead text-center text-white">
     <div class="masthead-content">
       <div class="container">
-        <h1 class="masthead-heading mb-0">Grupo de dança do campus ifrn</h1>
-        <a href="{% url 'registro' %}" class="btn btn-primary btn-xl rounded-pill mt-5">Se cadastrar</a>
+        <h1 class="masthead-heading mb-0">DivDance: GP de Dança do Campus Canguaretama</h1>
+        <a href="{% url 'dancarinos' %}" class="btn btn-primary btn-xl rounded-pill mt-5">Cadastro do Candidato</a>
       </div>
     </div>
     <div class="bg-circle-1 bg-circle"></div>
@@ -63,7 +62,7 @@
       <div class="row align-items-center">
         <div class="col-lg-6 order-lg-2">
           <div class="p-5">
-            <img class="img-fluid rounded-circle" src="static/10.jpg" alt="">
+            <img class="img-fluid rounded-circle" src="../static/img/10.jpg" alt="">
           </div>
         </div>
         <div class="col-lg-6 order-lg-1">
@@ -81,7 +80,7 @@
       <div class="row align-items-center">
         <div class="col-lg-6">
           <div class="p-5">
-            <img class="img-fluid rounded-circle" src="img/20.jpg" alt="">
+            <img class="img-fluid rounded-circle" src="../static/img/20.jpg" alt="">
           </div>
         </div>
         <div class="col-lg-6">
@@ -99,7 +98,7 @@
       <div class="row align-items-center">
         <div class="col-lg-6 order-lg-2">
           <div class="p-5">
-            <img class="img-fluid rounded-circle" src="img/30.jpg" alt="">
+            <img class="img-fluid rounded-circle" src="../static/img/30.jpg" alt="">
           </div>
         </div>
         <div class="col-lg-6 order-lg-1">
@@ -115,6 +114,7 @@
   <!-- Footer -->
   <footer class="py-5 bg-black">
     <div class="container">
+      <p class="m-0 text-center text-white small">Copyright &copy; Your Website 2019</p>
       <p class="m-0 text-center text-white small">Copyright &copy; Your Website 2019</p>
     </div>
     <!-- /.container -->
